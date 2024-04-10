@@ -8,10 +8,10 @@ const sequelize = new Sequelize("product_task", "root", "", {
 sequelize
   .authenticate()
   .then(() => {
-    console.log("Connected to database");
+    console.log("Connected to Store database");
   })
   .catch((error) => {
-    console.error("Not able to connect to the database:", error);
+    console.error("Unable to connect to the database:", error);
   });
 
 module.exports = sequelize;

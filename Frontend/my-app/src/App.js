@@ -1,23 +1,24 @@
 // App.js
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
-import CategoryList from './CategoryList';
-import ProductList from './ProductList';
-import Login from './Login';
-import Register from './Register';
-import PrivateRoute from './PrivateRoute';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CategoryList from './components/CategoryList';
+import ProductList from './components/ProductList';
+import Login from './components/Login';
+import Register from './components/Register';
+
+
+
 
 function App() {
   return (
     <Router>
       <div>
-        <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <PrivateRoute exact path="/" component={CategoryList} />
-          <PrivateRoute path="/products" component={ProductList} />
-        </Switch>
+        <Routes>
+        <Route path="/" element={<Login/>} />
+          {/* <Route path="/login" element={Login} /> */}
+          <Route path="/register/user" element={<Register/>} />
+          
+        </Routes>
       </div>
     </Router>
   );

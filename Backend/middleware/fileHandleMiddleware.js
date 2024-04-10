@@ -14,7 +14,7 @@ function ensureFolderExists(folderPath) {
 function getDestination(req, file, cb) {
   const fieldName = file.fieldname;
   const folderName =
-    fieldName === "profile_pic" ? "profile_pics" : "images";
+    fieldName === "profilePic" ? "profilePics" : "productImages";
   const destination = `./public/assets/${folderName}/`;
   ensureFolderExists(destination);
   cb(null, destination);

@@ -1,38 +1,35 @@
+require("dotenv").config();
 const express = require("express");
-const dotenv = require("dotenv");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const sequelize = require("./utils/sequelize");
 const userRoutes = require("./routes/userRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const productRoutes = require("./routes/productRoutes");
+const cookieParser = require("cookie-parser");
 // const cookieParser = require("cookie-parser");
 
 const app = express();
-// Configuring dotenv
-dotenv.config();
+
 
 // Middlewares
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(cookieParser());
+app.use(cookieParser());
 
 // Static Files
-app.use(
-  "/public/profile_pic",
-  express.static(__dirname + "/public/profile_pic")
-);
+app.use("/assets", express.static(__dirname + "/public/assets/profilePics"));
 
 // Cors
-// app.use(
-//   cors({
-//     origin: "http://localhost:3000",
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 
 // All Routes
-app.use(userRoutes, categoryRoutes, productRoutes);
+app.use( userRoutes, categoryRoutes, productRoutes);
 
 // Default Route
 app.get("/", (req, res) => {
@@ -40,10 +37,10 @@ app.get("/", (req, res) => {
 });
 
 // Server
-const PORT = process.env.PORT;
+const PORT = 4000;
 
 // Syncing the database
-sequelize
+sequelize;
 
 // Listening to the server
 app.listen(PORT, () => {
