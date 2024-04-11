@@ -1,9 +1,10 @@
+// Login.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Container, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify'; // Import toast from react-toastify
-import 'react-toastify/dist/ReactToastify.css'; // Import CSS for react-toastify
+import { toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css'; 
 import './styles.css';
 
 const Login = () => {
@@ -24,14 +25,12 @@ const Login = () => {
                 const token = response.data.token;
                 localStorage.setItem('accessToken', token);
                 toast.success('Login Successfully');
-                navigate('/get/products');
+                navigate('/homepage');
             } else {
-                // Show error toast message if login failed
                 toast.error('Login failed. Please try again.');
                 console.error('Login failed:', response.data.message);
             }
         } catch (error) {
-            // Show error toast message if an error occurred during login
             toast.error('An error occurred during login.');
             console.error('An error occurred during login:', error);
         }
@@ -66,6 +65,7 @@ const Login = () => {
                     <Button variant="primary" type="submit" className="w-100 mt-3">
                         Login
                     </Button>
+                    <div style={{ marginTop: '10px' }}></div> 
                     <Button variant="primary" type="button" className="w-100 mt-3" onClick={handleRegister}>
                         Register
                     </Button>

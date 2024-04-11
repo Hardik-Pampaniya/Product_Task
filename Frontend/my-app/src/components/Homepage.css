@@ -1,0 +1,48 @@
+/* HomePage.css */
+
+.homepage-container {
+    padding: 20px;
+  }
+  
+  .homepage-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .homepage-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .homepage-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .homepage-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .homepage-navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .homepage-navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .homepage-navigation li {
+    margin-right: 20px;
+  }
+  
+  .homepage-logout-button {
+    text-align: right;
+  }
+  
